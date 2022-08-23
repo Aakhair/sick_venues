@@ -4,11 +4,13 @@ class VenuesController < ApplicationController
 
   def new
     @venue = Venue.new
+    authorize @venue
   end
 
   def create
     @venue = Venue.new(venue_params)
     @venue.user = current_user
+    authorize @venue
 
     respond_to do |format|
       if @venue.save
@@ -48,5 +50,6 @@ class VenuesController < ApplicationController
 
   def set_venue
     @venue = Venue.find(params[:id])
+    authorize @venue
   end
 end
