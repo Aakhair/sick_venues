@@ -1,8 +1,20 @@
-<h2><%= @venue.title %></h2>
-<p><%= @venue.description %></p>
-<p><%= @venue.location %></p>
-<p><%= @venue.price %></p>
-<p><%= @venue.capacity %></p>
+<div class ="container">
+  <h1><%= @venue.title %></h1>
+  <p><%= @venue.location %></p>
 
-
-<%= link_to "Back to all venues", venues_path %>
+  <button type="button" class="btn btn-dark">Book now</button>
+  <div class = "row">
+    <div class="col-xs-12 col-sm-8">
+      <p><%= @venue.description %></p>
+      <p>This location is perfect for: <%= @venue.category.capitalize %></p>
+      <p>You can host <strong><%= @venue.capacity %> friends! </strong></p>
+      <p><strong>Our best price for you:</strong> <%= sprintf('%.2f', @venue.price) %> €</p>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <p> Here could be a map </p>
+    </div>
+    <p>Contact information:</p>
+    <p><%= @venue.user.email %></p>
+  </div>
+  <%= link_to "Back to all venues", venues_path %>
+</div>
