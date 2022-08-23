@@ -9,6 +9,4 @@ Rails.application.routes.draw do
   resources :venues, only: %i[index show new create edit update] do
     resources :reservations, only: %i[new create]
   end
-
-  #resources :users []
 end
