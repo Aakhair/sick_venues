@@ -8,7 +8,7 @@
     <%= f.input :description, :as => :text %>
     <%= f.input :location %>
     <%= f.input :capacity, :as => :integer %>
-    <%= f.input :category %>
+    <%= f.input :category, collection: Venue::CATEGORIES %>
     <%= f.input :price, :as => :float %>
     <%= f.input :photo, as: :file %>
   </div>
