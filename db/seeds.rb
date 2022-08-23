@@ -7,6 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
+# un comment to delete the previous recored's
+# User.destroy_all
+# Venue.destroy_all
+# puts "deleted the previos record's"
+
 puts 'Creating 10 fake users...'
 10.times do
   user = User.new(
@@ -26,6 +31,7 @@ category = ['badass wedding', 'intense ravers', 'crazy hippies', 'outdoor concer
 all_users = User.all
 
 10.times do
+  file = URI.open("https://source.unsplash.com/random/?medieval,castel")
   venue = Venue.new(
     title: title.sample,
     description: Faker::Hipster.paragraph_by_chars(characters: 256, supplemental: false),
@@ -35,6 +41,7 @@ all_users = User.all
     price: rand(800..10000),
     user: all_users.sample
   )
+  venue.photo.attach(io: file, filename: "castel.png", content_type: "image/png")
   venue.save!
 end
 puts '10 Venues have been created!'
