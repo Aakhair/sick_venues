@@ -1,11 +1,22 @@
 body {
-  margin: 0;
+  margin-bottom: 0 !important;
+  padding-bottom: 0;
+}
+
+// Features Section
+
+#features {
+  padding: 5%;
+}
+
+.feature-card {
+  margin: 0 15px 0;
 }
 
 // Testimonial Section
 
 #testimonials {
-  background-color: lightgray;
+  background-color: gray;
   text-align: center;
 }
 
@@ -16,12 +27,4 @@ body {
 .testimonial-image {
   width: 10%;
   border-radius: 50%;
-}
-
-// Footer Section
-
-#footer {
-  background-color: grey;
-  text-align: center;
-  margin-bottom: 0;
 }
