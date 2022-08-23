@@ -1,7 +1,11 @@
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-}
+  position: sticky;
+  top: 0px;
+  width:100%
+  }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -12,6 +16,12 @@
 }
 
 .logo {
-  width: 170px;
+  width: 180px;
   padding-left: 10px;
+}
+.nav-link {
+  color: #465DB6;
+}
+.nav-link:hover {
+  color: #08C18A;
 }

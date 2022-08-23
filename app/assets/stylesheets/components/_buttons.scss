@@ -1,0 +1,69 @@
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.btn-cancel {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #6a757e;
+  transition: background 0.3s ease;
+}
+
+.button-moves-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+a.button_moves_text, a.button_moves_link {
+  text-decoration: none;
+}
+
+a#link_button_moves {
+  margin-top: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a#link_button_moves:hover {
+  color: #B01EFF;
+}
+
+.button_moves {
+  cursor: pointer;
+  width: 220px;
+  height: 60px;
+  background: white;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
+  animation: gradient 3.5s infinite 1.5s cubic-bezier(0.2, 0.8, 0.2, 1.2) forwards;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: white;
+  margin-top: 10px;
+}
+
+@keyframes gradient {
+  0% { background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) }
+  10% { background: linear-gradient(90deg, #d53369 0%, #daae51 100%) }
+  20% { background: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%) }
+  30% { background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%) }
+  40% { background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%) }
+  50% { background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%) }
+  60% { background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%) }
+  70% { background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%) }
+  80% { background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%) }
+  90% { background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%) }
+  100% { background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) }
+}

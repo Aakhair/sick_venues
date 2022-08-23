@@ -7,6 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
+User.destroy_all
+Venue.destroy_all
+
 puts 'Creating 10 fake users...'
 10.times do
   user = User.new(
@@ -19,13 +22,13 @@ end
 puts '10 Users have been created!'
 
 
-puts 'Creating 10 fake venues...'
-title = ['Torre de Belém', 'Pena Palace', 'Castle of Santa Maria da Feira', 'Ribeira Palace', 'Castelo de São Jorge', 'Fontainebleu', 'Mont Saint-Michel', 'Sagrada de Familia', 'Château de Chambord', 'Palace of Versailles']
+puts 'Creating 12 fake venues...'
+title = ['Torre de Belém', 'Pena Palace', 'Castle of Santa Maria da Feira', 'Ribeira Palace', 'Castelo de São Jorge', 'Fontainebleu', 'Mont Saint-Michel', 'Sagrada de Familia', 'Château de Chambord', 'Palace of Versailles', 'Windsor Palace', 'Luxembourg Palace']
 category = ['badass wedding', 'intense ravers', 'crazy hippies', 'outdoor concert', 'epic birthday', 'messy graduation', 'dangerous corporate outing', 'unshitty family reunion', 'dog lovers']
 
 all_users = User.all
 
-10.times do
+12.times do
   venue = Venue.new(
     title: title.sample,
     description: Faker::Hipster.paragraph_by_chars(characters: 256, supplemental: false),
