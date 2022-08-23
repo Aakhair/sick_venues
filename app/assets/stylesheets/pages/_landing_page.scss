@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+}
+
+// Testimonial Section
+
 #testimonials {
   background-color: lightgray;
   text-align: center;
@@ -10,4 +16,12 @@
 .testimonial-image {
   width: 10%;
   border-radius: 50%;
+}
+
+// Footer Section
+
+#footer {
+  background-color: grey;
+  text-align: center;
+  margin-bottom: 0;
 }
