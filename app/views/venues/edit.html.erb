@@ -1,9 +1,10 @@
-<h1>New venue</h1>
+<h1>Editing a Venue</h1>
 
 <%= render "form", venue: @venue %>
 
 <br>
 
 <div>
+  <%= link_to "Show this venue", @venue %> |
   <%= link_to "Back to Venues", venues_path %>
 </div>
