@@ -1,0 +1,50 @@
+<div class="cover mb-4 align-items-center justify-content-center">
+<div id="banner_castle" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "castle.jpg" %>');">
+  <div class="container_banner">
+    <h1>Book a sick castle for your <strong>badass </strong>event! </h1>
+    <p>For an unforgettable concert to rave parties</p>
+
+    <div class="button-moves-container">
+      <a target=”_blank” class="button_moves_link" href="https://www.producthunt.com/posts/gradient-buttons-for-react-native"><div class="button_moves" id="button">🎉 Book now</div></a>
+      <a class="button_moves_text" target=”_blank” id="link_button_moves" href="https://www.producthunt.com/posts/gradient-buttons-for-react-native"></a>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<br>
+
+   </div>
+<div class="container mb-4">
+<h2>Available castles for rent </h2>
+  <div class="row">
+    <% @venues.each do |venue| %>
+
+      <div class="co-12 col-sm-6 col-md-3 mb-3">
+        <%= link_to venue_path(venue), class:"text-decoration-none" do %>
+          <div class="card-trip">
+                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+                <div class="card-trip-infos">
+                  <div>
+                  <%=venue.title%>
+                    <p>!</p>
+                  </div>
+                  <h2 class="card-trip-pricing">€ <%=venue.price.floor%></h2>
+
+
+                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                </div>
+              </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">My events</h3>
+    <%= link_to "My events", root_path, class: "btn btn-flat" %>
+  </div>
+</div>

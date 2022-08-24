@@ -7,10 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-# un comment to delete the previous recored's
-# User.destroy_all
-# Venue.destroy_all
-# puts "deleted the previos record's"
+User.destroy_all
+Venue.destroy_all
+
+puts "deleted the previous records"
 
 puts 'Creating 10 fake users...'
 10.times do
@@ -24,14 +24,15 @@ end
 puts '10 Users have been created!'
 
 
-puts 'Creating 10 fake venues...'
-title = ['Torre de Belém', 'Pena Palace', 'Castle of Santa Maria da Feira', 'Ribeira Palace', 'Castelo de São Jorge', 'Fontainebleu', 'Mont Saint-Michel', 'Sagrada de Familia', 'Château de Chambord', 'Palace of Versailles']
+puts 'Creating 12 fake venues...'
+title = ['Torre de Belém', 'Pena Palace', 'Castle of Santa Maria da Feira', 'Ribeira Palace', 'Castelo de São Jorge', 'Fontainebleu', 'Mont Saint-Michel', 'Sagrada de Familia', 'Château de Chambord', 'Palace of Versailles', 'Windsor Palace', 'Luxembourg Palace']
 category = ['badass wedding', 'intense ravers', 'crazy hippies', 'outdoor concert', 'epic birthday', 'messy graduation', 'dangerous corporate outing', 'unshitty family reunion', 'dog lovers']
 
 all_users = User.all
 
-10.times do
+12.times do
   file = URI.open("https://source.unsplash.com/random/?medieval,castel")
+
   venue = Venue.new(
     title: title.sample,
     description: Faker::Hipster.paragraph_by_chars(characters: 256, supplemental: false),
@@ -44,4 +45,4 @@ all_users = User.all
   venue.photo.attach(io: file, filename: "castel.png", content_type: "image/png")
   venue.save!
 end
-puts '10 Venues have been created!'
+puts '12 Venues have been created!'
