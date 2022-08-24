@@ -12,7 +12,9 @@ class VenuesController < ApplicationController
     @markers = [
       {
         lat: @venue.latitude,
-        lng: @venue.longitude
+        lng: @venue.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {venue: @venue}),
+        image_url: @venue.photo.url
       }
     ]
   end
