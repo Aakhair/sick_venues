@@ -3,7 +3,6 @@ class VenuesController < ApplicationController
   before_action :set_venue, only: %i[ edit update show]
 
   def show
-    @venue = Venue.find(params[:id])
   end
 
 
@@ -50,7 +49,7 @@ class VenuesController < ApplicationController
   private
 
   def venue_params
-    params.require(:venue).permit(:title, :description, :location, :capacity, :category, :price)
+    params.require(:venue).permit(:title, :description, :location, :capacity, :category, :price, :photo)
   end
 
   def set_venue
