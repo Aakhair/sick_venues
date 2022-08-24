@@ -1,9 +1,23 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Josefin Sans');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Mouse+Memoirs&family=Shrikhand&display=swap');
+@font-face{
+  font-family: 'MyWebFont';
+  src: url('WebFont.eot');
+  src: url('WebFont.eot?#iefix') format('embedded-opentype'),
+  url('WebFont.woff') format('woff'),
+  url('WebFont.ttf') format('truetype'),
+  url('WebFont.svg#webfont') format('svg');
+  }
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Work Sans";
+// "Work Sans", "Helvetica", "sans-serif";
+$headers-font: 'Josefin Sans'
+// 'Shrikhand', cursive;
+// 'Luckiest Guy', cursive;
+//Josefin Sans', "Nunito", "Helvetica", "sans-serif";
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

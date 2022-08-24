@@ -24,7 +24,7 @@ puts '10 Users have been created!'
 
 puts 'Creating 12 fake venues...'
 title = ['Torre de Belém', 'Pena Palace', 'Castle of Santa Maria da Feira', 'Ribeira Palace', 'Castelo de São Jorge', 'Fontainebleu', 'Mont Saint-Michel', 'Sagrada de Familia', 'Château de Chambord', 'Palace of Versailles', 'Windsor Palace', 'Luxembourg Palace']
-category = ['badass wedding', 'intense ravers', 'crazy hippies', 'outdoor concert', 'epic birthday', 'messy graduation', 'dangerous corporate outing', 'unshitty family reunion', 'dog lovers']
+category = ['badass wedding', 'outdoor concert', 'epic birthday', 'messy graduation', 'dog lovers']
 
 all_users = User.all
 
@@ -40,4 +40,4 @@ all_users = User.all
   )
   venue.save!
 end
-puts '10 Venues have been created!'
+puts '12 Venues have been created!'

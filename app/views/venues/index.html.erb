@@ -1,8 +1,8 @@
 <div class="cover mb-4 align-items-center justify-content-center">
 <div id="banner_castle" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "castle.jpg" %>');">
   <div class="container_banner">
-    <h1>Book a sick castle for your <strong>badass </strong>event! </h1>
-    <p>For an unforgettable concert to rave parties</p>
+    <h1>Book a sick castle for your badass event! </h1>
+    <p class="text-white">For an unforgettable concert to rave parties</p>
 
     <div class="button-moves-container">
       <a target=”_blank” class="button_moves_link" href="https://www.producthunt.com/posts/gradient-buttons-for-react-native"><div class="button_moves" id="button">🎉 Book now</div></a>
@@ -12,25 +12,115 @@
   </div>
 </div>
 </div>
+<div class="slider mb-1">
+<h3 class="text-center text-grey mt-2 ">Loved by clients</h3>
+	<div class="slide-track">
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="80" width="200" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="80" width="200" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="80" width="200" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="80" width="200" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="80" width="200" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="80" width="200" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="80" width="200" alt="" />
+		</div>
+    	<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="80" width="200" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="80" width="200" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="80" width="200" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="80" width="200" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="80" width="200" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="80" width="200" alt="" />
+		</div>
+		<div class="slide">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="80" width="200" alt="" />
+		</div>
+	</div>
+</div>
 
-<br>
-
+	</div>
+</div>
    </div>
+   <br>
+
 <div class="container mb-4">
 <h2>Available castles for rent </h2>
+<div class ="container mb-4">
+<div class="cards-list">
+<div class="card 1">
+  <div class="card_image"> <%= image_tag "outdoor.png" %> </div>
+
+  <div class="card_title title-white">
+  </div>
+</div>
+
+  <div class="card 2">
+  <div class="card_image">
+    <%= image_tag "wedding.png" %>
+    </div>
+  <div class="card_title title-white">
+  </div>
+</div>
+
+<div class="card 3">
+  <div class="card_image">
+    <%= image_tag "dog.png" %>
+  </div>
+  <div class="card_title">
+  </div>
+</div>
+
+  <div class="card 4">
+  <div class="card_image">
+    <%= image_tag "bday.png" %>
+    </div>
+  <div class="card_title title-black">
+  </div>
+  </div>
+  <div class="card 4">
+  <div class="card_image">
+   <%= image_tag "grad.png" %>
+    </div>
+  <div class="card_title title-black">
+  </div>
+  </div>
+</div>
+
   <div class="row">
     <% @venues.each do |venue| %>
 
       <div class="co-12 col-sm-6 col-md-3 mb-3">
         <%= link_to venue_path(venue), class:"text-decoration-none" do %>
-          <div class="card-trip">
+          <div class="card-trip text-info" >
                 <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
                 <div class="card-trip-infos">
                   <div>
                   <%=venue.title%>
                     <p>!</p>
                   </div>
-                  <h2 class="card-trip-pricing">€ <%=venue.price.floor%></h2>
+                  <h2 class="card-trip-pricing text-info">€ <%=venue.price.floor%></h2>
 
 
                   <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
@@ -42,9 +132,4 @@
   </div>
 </div>
 </div>
-<div class="container py-5">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0">My events</h3>
-    <%= link_to "My events", root_path, class: "btn btn-flat" %>
-  </div>
-</div>
+<br>
