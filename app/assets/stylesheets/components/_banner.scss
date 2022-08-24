@@ -11,7 +11,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-weight: bold;
   padding: 50px;
-  font-size: 32px;
+  font-size: 48px;
 }
 
 .banner p {
@@ -19,4 +19,14 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+#banner_castle{
+  background-size: cover;
+  background-position: center;
+}
+
+#banner_castle h1 {
+  color: white;
+  font-size: 50px;
 }
