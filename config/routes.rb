@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "pages#landing_page"
 
-  get "/landing-page", to: "pages#landing_page"
+  get "/venues", to: "venues#index"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

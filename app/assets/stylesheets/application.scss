@@ -10,3 +10,28 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+
+.row {
+  padding: 30px;
+}
+
+.container_banner{
+  padding: 130px;
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+}
+
+#banner_castle{
+  background-size: cover;
+  background-position: center;
+}
+
+
+#banner_castle h1,p {
+  color: white;
+}
