@@ -12,8 +12,8 @@
   </div>
 </div>
 </div>
-<div class="slider mb-1">
-<h3 class="text-center text-grey mt-2 ">Loved by clients</h3>
+<div class="slider mb-1 mt-2">
+<h3 class="text-center text-lightgrey mt-2 align-middle ">Loved by clients</h3>
 	<div class="slide-track">
 		<div class="slide">
 			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="80" width="200" alt="" />
@@ -66,7 +66,7 @@
    <br>
 
 <div class="container mb-4">
-<h2>Available castles for rent </h2>
+
 <div class ="container mb-4">
 <div class="cards_list">
 <div class="card_index 1">
@@ -110,17 +110,14 @@
 
   <div class="row">
     <% @venues.each do |venue| %>
-
-      <div class="co-12 col-sm-6 col-md-3 mb-3">
-       <% @id=venue.id%>
-        <%= link_to venue_path(@id), class:"text-decoration-none" do %>
-          <div class="card-trip text-info" >
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-                <div class="card-trip-infos">
-                    <div class="">
+      <div class="card m-3 rounded-20" style="width: 18rem;">
+        <%= link_to venue_path(venue), class:"text-decoration-none" do %>
+          <div class="card-img-top text-info text-white", style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path venue.photo.key, height: 300, width: 400, crop: :fill %>); background-position: center; background-size:cover">
+                <div class="card-body rounded-20">
+                    <h5 class="card-title text-white">
                     <%=venue.title%>
-                    </div>
-                    <h2 class="card-trip-pricing text-info mt-2 text-nowrap ml-auto">€ <%=venue.price.floor%></h2>
+                    </h5>
+                    <h2 class="card-text text-info mt-2 text-nowrap ml-auto text-white">€ <%=venue.price.floor%></h2>
                   <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
                 </div>
               </div>

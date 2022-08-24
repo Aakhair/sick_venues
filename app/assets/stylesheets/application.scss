@@ -11,11 +11,9 @@
 @import "components/index";
 @import "pages/index";
 
-
-
-.row {
-  padding: 30px;
-}
+// .row {
+//   // padding: 30px;
+// }
 
 .container_banner{
   padding: 130px;
@@ -26,11 +24,15 @@
   text-align: center;
 }
 
+p{
+  font-family: "Work Sans";
+  font-size: 20px;
+}
+
 #banner_castle{
   background-size: cover;
   background-position: center;
 }
-
 
 #banner_castle h1 {
   color: white;

@@ -31,25 +31,8 @@ category = ['badass wedding', 'outdoor concert', 'epic birthday', 'messy graduat
 
 all_users = User.all
 
-# filepath_descriptions = "db/seed-castle-descriptions.txt"
-# descriptions = File.read(filepath_descriptions).split("\n")
-
-descriptions = ["Four strong, square towers surround the castle in almost a perfect circle around this incredible castle and are connected by tall, firm walls made of black stone.",
-                "Tall, wide windows are scattered thinly across the walls in a seemingly random pattern, along with small holes for archers and artillery.",
-                "A sizable gate with huge metal doors, a regular bridge and various artillery equipment guards the only entrance to the castle build at the edges of a shoreline, but it's not the only way in, but it'll be your best shot if you wish to conquer this castle.",
-                "Plain fields of a type of grass cover most of the fields outside of the castle, adding to the castle's aesthetics. This castle is relatively new, but so far it stood its ground with ease and it'll likely do so for ages to come.",
-                "Six broad, round towers are low, but set firm and strong for a great defensive line and are connected by strengthened, massive walls made of dark green stone.",
-                "Stylish windows are scattered thinly across the walls in an asymmetric pattern, along with overhanging crenelations for archers and artillery.",
-                "A sizable gate with hefty metal doors and archer holes protects those in need of aid in this rough mountain pass and it's the only way in, at least without taking down the castle walls.",
-                "Lush fields of crops surround the castle walls and provides the inhabitants with food all year round. This castle is relatively new, but so far it stood its ground with ease and it'll likely do so for ages to come.",
-                "Thirteen broad, square towers are scattered in a seemingly random pattern, but have been build for an ideal defense and are connected by huge, wide walls made of dark brown stone.",
-                "Small windows are scattered generously around the walls in fairly symmetrical patterns, along with overhanging crenelations for archers and artillery.",
-                "A huge gate with large wooden doors and various artillery equipment offers a safe home to all those in need in these cold mountainsand it's the only way in, at least to those unfamiliar with the castle and its surroundings.",
-                "A handful of waterfalls flow into various small rivers and provide the precious farm fields outside the castle with needed water. This castle has clearly been around for at least a thousand years, but it doesn't seem like it will collapse any time soon.",
-                "Crude windows are scattered generously around the walls in fairly symmetrical patterns, along with symmetric holes for archers and artillery.",
-                "A huge gate with wide wooden doors, a draw bridge and various artillery equipment guards the inhabitants of this island castle, but it's not the only way in, which fortunately only very few know.",
-                "Huge statues of heroes and kings decorate the bridge outside, memories of glories of the past. This castle has stood the test of time and despite knowing some very rough times, the castle still stands and it looks like it will do so for many years to come."]
-
+filepath_descriptions = "db/seed-castle-descriptions.txt"
+descriptions = File.read(filepath_descriptions).split("\n")
 
 12.times do |index|
   file = URI.open("https://source.unsplash.com/random/?medieval,castel")
@@ -67,3 +50,65 @@ descriptions = ["Four strong, square towers surround the castle in almost a perf
   venue.save!
 end
 puts '12 Venues have been created!'
+
+file = URI.open("https://sc04.alicdn.com/kf/H480fc534e72940a8806e839ca191a613f.jpg")
+  venue = Venue.new(
+    title: "Bouncy Castle Deluxe",
+    description: "You want to throw a party that your friends will remember? Go for our Jumping Castle Deluxe! A large inflatable structure, typically in the form of a stylized castle or other building, on which children can jump and play.",
+    location: Faker::Address.full_address,
+    capacity: 50,
+    category: "epic birthday",
+    price: 80,
+    user: all_users.sample
+  )
+  venue.photo.attach(io: file, filename: "castel.png", content_type: "image/png")
+  venue.save!
+  file = URI.open("https://www.lego.com/cdn/cs/set/assets/blt22e2e84fd35ab59d/43187_alt4.png")
+  venue = Venue.new(
+    title: "Rapunzel's Tower",
+    description: "Looking for an secluded tower hidden deep within the woods outside of the kingdom of Corona? We found the perfect hidden treasure for you. The entrance is a little hard to reach but once in, you will stay forever.",
+    location: Faker::Address.full_address,
+    capacity: 2,
+    category: "dangerous corporate outing",
+    price: 500,
+    user: all_users.sample
+  )
+  venue.photo.attach(io: file, filename: "castel.png", content_type: "image/png")
+  venue.save!
+  file = URI.open("https://www.viajoteca.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2019/08/Passeio-de-1-dia-desde-Paris-22.jpg.webp")
+  venue = Venue.new(
+    title: "Mont Saint Michel",
+    description: "Le Mont-Saint-Michel (pronounced [mɔ̃ sɛ̃ mi. ʃɛl]) is an island and commune in Normandy, France. It is in the Manche department. It is located about one kilometre (0.6 miles) from the country's northwestern coast.",
+    location: "50170 Mont Saint-Michel, France",
+    capacity: 1000,
+    category: "badass wedding",
+    price: 6500,
+    user: all_users.sample
+  )
+  venue.photo.attach(io: file, filename: "castel.png", content_type: "image/png")
+  venue.save!
+  file = URI.open("https://www.schloesser.bayern.de/bilder/schloss/neuschwanstein450.jpg")
+  venue = Venue.new(
+    title: "Neuschwanstein Castle",
+    description: "Neuschwanstein Castle is a 19th-century historicist palace on a rugged hill above the village of Hohenschwangau near Füssen in southwest Bavaria, Germany. It needs some renovation, heating is not working, but perfect for a badass birthday party.",
+    location: "Neuschwansteinstr. 20, 87645 Schwangau",
+    capacity: 1500,
+    category: "epic birthday",
+    price: 7000,
+    user: all_users.sample
+  )
+  venue.photo.attach(io: file, filename: "castel.png", content_type: "image/png")
+  venue.save!
+  # CATEGORIES = ['lonely ranger', 'badass wedding', 'intense ravers', 'crazy hippies', 'outdoor concert', 'epic birthday', 'messy graduation', 'dangerous corporate outing', 'unshitty family reunion', 'dog lovers']
+  file = URI.open("https://c.pxhere.com/photos/de/96/heidelberg_castle_heidelberger_schloss_germany_building_architecture_ruin_facade-1218138.jpg!d")
+  venue = Venue.new(
+    title: "Broken Castle",
+    description: "A little broken but with an unique style. Perfect for everyone with their own distinctive lifestyle and a sense of marginality. ",
+    location: Faker::Address.full_address,
+    capacity: 300,
+    category: "crazy hippies",
+    price: 700,
+    user: all_users.sample
+  )
+  venue.photo.attach(io: file, filename: "castel.png", content_type: "image/png")
+  venue.save!
