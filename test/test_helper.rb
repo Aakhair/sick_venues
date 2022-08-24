@@ -10,4 +10,12 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  n = 1
+  File.foreach("../db/seed-castle-descriptions.txt") do |content|
+    puts n
+    puts content
+    n += 1
+  end
+
 end
