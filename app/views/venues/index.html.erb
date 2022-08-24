@@ -112,7 +112,8 @@
     <% @venues.each do |venue| %>
 
       <div class="co-12 col-sm-6 col-md-3 mb-3">
-        <%= link_to venue_path(venue), class:"text-decoration-none" do %>
+       <% @id=venue.id%>
+        <%= link_to venue_path(@id), class:"text-decoration-none" do %>
           <div class="card-trip text-info" >
                 <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
                 <div class="card-trip-infos">
