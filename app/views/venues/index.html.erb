@@ -1,7 +1,6 @@
 <div class="cover mb-4 align-items-center justify-content-center">
 <div id="banner_castle" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "castle.jpg" %>');">
   <div class="container_banner">
-
     <h1>Book a sick castle for your badass event! </h1>
     <p class="text-white">For an unforgettable concert to rave parties</p>
 
@@ -113,11 +112,7 @@
     <% @venues.each do |venue| %>
       <div class="co-12 col-sm-6 col-md-3 mb-3">
         <%= link_to venue_path(venue), class:"text-decoration-none" do %>
-          <div class="card-trip text-info" >
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-
-          <%#= cl_image_path venue.photo.key, height: 300, width: 400, crop: :fill %>)>
-
+          <div class="card-trip text-info", style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path venue.photo.key, height: 300, width: 400, crop: :fill %>">
                 <div class="card-trip-infos">
                   <div>
                   <%=venue.title%>
