@@ -1,0 +1,54 @@
+<div class ="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <div class="card mb-3">
+        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @venue.photo.key, height: 300, width: 400, crop: :fill %>);">
+
+          <h3 class ="banner-price"><strong><%= sprintf('%.2f', @venue.price) %> €/ Day</strong></h3>
+           <%= link_to "Request to book now!", "#", class: "btn banner-btn" %>
+        </div>
+
+        <div class="card-body">
+          <div class="d-flex justifiy-content-center text-center">
+            <div class="text-center">
+            <%# <div>
+              <%= link_to "Request to book now!", "#", class: "btn btn-ghost" %>
+            <%# </div> %>
+              <h1 class="m-3"><%= @venue.title %></h1>
+
+              <div class="d-flex justify-content-center align-items-md-baseline">
+                <i class="fa-solid fa-location-dot fa-fw"></i>
+                <p class= "ms-2"><%= @venue.location %></p>
+              </div>
+
+              <div class="d-flex justify-content-center align-items-md-baseline">
+                <i class="fa-solid fa-champagne-glasses fa-fw"></i>
+                <p class= "ms-2"> Perfect for: <%= @venue.category.capitalize %></p>
+              </div>
+
+              <div class="d-flex justify-content-center align-items-md-baseline">
+                <i class="fa-solid fa-people-group fa-fw"></i>
+                <p class= "ms-2">You can host <strong><%= @venue.capacity %> friends! </strong></p>
+              </div>
+              <p><%= @venue.description %></p>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <div>
+              <p class ="mt-4 ps-2">Questions? Get in contact:</p>
+              <div class="d-flex justify-content align-items-md-baseline ps-2">
+                <a class="btn btn-ghost w-100" href = "mailto: <%= @venue.user.email %>"><i class="fa-solid fa-paper-plane"></i> Send Email</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="container">
+        <p> Here will be a map </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: %i[landing_page]
 
-  def home
-    @venues = Venue.all
+  def landing_page
   end
 end
