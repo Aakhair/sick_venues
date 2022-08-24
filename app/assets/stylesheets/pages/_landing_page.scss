@@ -1,0 +1,57 @@
+body {
+ font-family: 'Montserrat', sans-serif;
+ background-color: white;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+h2 {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1.5;
+  color: white;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+p {
+  color: #8F8F8F;
+}
+
+// Features Section
+
+#features {
+  padding: 9% 10%;
+}
+
+.feature-card {
+  margin: 15px;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin: 1rem;
+  color: #B6B6B6;
+}
+
+// Testimonial Section
+
+#testimonials {
+  background-color: gray;
+  text-align: center;
+}
+
+#testimonials .carousel-item {
+  padding: 7% 15%;
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 50%;
+}

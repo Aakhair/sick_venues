@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "venues#index"
+  root to: "pages#landing_page"
+
+  get "/venues", to: "venues#index"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -9,6 +12,4 @@ Rails.application.routes.draw do
   resources :venues, only: %i[index show new create edit update] do
     resources :reservations, only: %i[new create]
   end
-
-  #resources :users []
 end
