@@ -1,15 +1,14 @@
 class VenuesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :show
-  before_action :set_venue, only: %i[ edit update show]
-  
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_venue, only: %i[edit update show]
+
   def index
     @venues = Venue.all
-   end
-
-  def show
-    @venue = Venue.find(params[:id])
+    @venues = policy_scope(Venue)
   end
 
+  def show
+  end
 
   def new
     @venue = Venue.new
@@ -52,7 +51,7 @@ class VenuesController < ApplicationController
   private
 
   def venue_params
-    params.require(:venue).permit(:title, :description, :location, :capacity, :category, :price)
+    params.require(:venue).permit(:title, :description, :location, :capacity, :category, :price, :photo)
   end
 
   def set_venue
