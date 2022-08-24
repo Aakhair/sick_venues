@@ -1,3 +1,21 @@
+.btn-main{
+  color: white;
+  padding: 16px 42px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  // transition: background 0.3s ease;
+  font-size: 25px;
+  font-family: 'Work Sans';
+  width: 280px;
+  height: 60px;
+  text-decoration: none;
+}
+  .btn-main:hover {
+   background-color: #3a47d5;
+   color: white;
+  }
+
+
 .btn-flat {
   color: white;
   padding: 8px 24px;
@@ -20,7 +38,6 @@
   justify-content: center;
   align-items: center;
 }
-
 
 a.button_moves_text, a.button_moves_link {
   text-decoration: none;
