@@ -1,14 +1,21 @@
 class VenuesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
+  before_action :set_venue, only: %i[ edit update show]
 
-  before_action :set_venue, only: %i[ edit update ]
+  def show
+    @venue = Venue.find(params[:id])
+  end
+
 
   def new
     @venue = Venue.new
+    authorize @venue
   end
 
   def create
     @venue = Venue.new(venue_params)
     @venue.user = current_user
+    authorize @venue
 
     respond_to do |format|
       if @venue.save
@@ -48,5 +55,6 @@ class VenuesController < ApplicationController
 
   def set_venue
     @venue = Venue.find(params[:id])
+    authorize @venue
   end
 end
