@@ -4,6 +4,12 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params[:id])
+    @markers = [
+      {
+        lat: @venue.latitude,
+        lng: @venue.longitude
+      }
+    ]
   end
 
 
