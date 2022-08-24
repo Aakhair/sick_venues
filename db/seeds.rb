@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-User.destroy_all
 Venue.destroy_all
+User.destroy_all
 
 puts "deleted the previous records"
 
