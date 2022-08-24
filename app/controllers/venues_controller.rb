@@ -4,12 +4,13 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
-   end
+    @venues = policy_scope(Venue)
+  end
 
   def show
     @venue = Venue.find(params[:id])
+    authorize @venue
   end
-
 
   def new
     @venue = Venue.new
