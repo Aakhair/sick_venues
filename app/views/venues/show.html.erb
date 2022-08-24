@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-8">
       <div class="card mb-3">
-        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @venue.photo.key, height: 300, width: 400, crop: :fill %>);">
+        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @venue.photo.key, height: 300, width: 400, crop: :fill %>);background-position: 100%">
 
           <h3 class ="banner-price"><strong><%= sprintf('%.2f', @venue.price) %> €/ Day</strong></h3>
            <%= link_to "Request to book now!", "#", class: "btn banner-btn" %>

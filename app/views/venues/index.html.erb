@@ -110,14 +110,14 @@
 
   <div class="row">
     <% @venues.each do |venue| %>
-      <div class="co-12 col-sm-6 col-md-3 mb-3">
+      <div class="card m-3 rounded-20" style="width: 18rem;">
         <%= link_to venue_path(venue), class:"text-decoration-none" do %>
-          <div class="card-trip text-info", style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path venue.photo.key, height: 300, width: 400, crop: :fill %>">
-                <div class="card-trip-infos">
-                    <div class="">
+          <div class="card-img-top text-info text-white", style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path venue.photo.key, height: 300, width: 400, crop: :fill %>); background-position: center; background-size:cover">
+                <div class="card-body rounded-20">
+                    <h5 class="card-title text-white">
                     <%=venue.title%>
-                    </div>
-                    <h2 class="card-trip-pricing text-info mt-2 text-nowrap ml-auto">€ <%=venue.price.floor%></h2>
+                    </h5>
+                    <h2 class="card-text text-info mt-2 text-nowrap ml-auto text-white">€ <%=venue.price.floor%></h2>
                   <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
                 </div>
               </div>
