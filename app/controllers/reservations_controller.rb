@@ -1,19 +1,16 @@
 class ReservationsController < ApplicationController
-
   before_action :set_venue, only: %i[create]
 
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     @reservation.venue = @venue
-  
-    if @reservation.save!
-      redirect_to venue_path(@venue)
+    if @reservation.save
+      redirect_to venue_path(@venue), notice: "Restaurant was successfully updated."
     else
-      @review = Reservation.new
-      render :modal, status: :unprocessable_entity
+      @reservation = Reservation.new
+      redirect_to venue_path(@venue), notice: "This date has been already booked."
     end
-
   end
 
   private
