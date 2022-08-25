@@ -1,23 +1,24 @@
 <div class="row justify-content-center">
-  <div class="form-new-venue col-6 mt-5">
+  <div class="form-new-venue col-6 m-5 card p-5">
+    <h2 class="text-center" style="color: black;"><%= @h2 %></h2>
     <%= simple_form_for(@venue) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
       <div class="form-inputs">
-        <%= f.input :title, :label => 'The name of the Venue' %>
-        <%= f.input :description, :as => :text, :label => 'Describe the Venue'%>
-        <%= f.input :location, :label => 'Where is it?' %>
+        <%= f.input :title, :label => 'Venue Name' %>
+        <%= f.input :description, :as => :text, :label => 'Description'%>
+        <%= f.input :location, :label => 'Location' %>
         <div class="d-flex justify-content-between">
           <%= f.input :capacity, :as => :integer, :hint => 'Type a Number please.' %>
           <%= f.input :category, collection: Venue::CATEGORIES %>
-          <%= f.input :price, :as => :float, :label => 'Price per night', :placeholder => '129.99' %>
+          <%= f.input :price, :as => :float, :label => 'Price per night', :placeholder => '129' %>
         </div>
-        <%= f.input :photo, as: :file, :inline_label => 'Yes, remember me'  %>
+        <%= f.input :photo, as: :file %>
       </div>
 
-      <div class="form-actions btn btn-link ">
-        <%= f.button :submit %>
+      <div class="form-actions">
+       <%= f.button :submit, class: "btn-main-for-form" %>
       </div>
     <% end %>
   </div>
