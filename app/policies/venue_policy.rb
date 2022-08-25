@@ -17,4 +17,8 @@ class VenuePolicy < ApplicationPolicy
   def update
     record.user == user
   end
+
+  def my_venues
+   record.user == user
+  end
 end

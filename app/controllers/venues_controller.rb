@@ -2,6 +2,10 @@ class VenuesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_venue, only: %i[edit update show]
 
+  def my_venues
+    @venues = current_user.venues
+  end
+
   def index
     @venues = Venue.all
     @venues = policy_scope(Venue)
