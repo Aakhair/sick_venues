@@ -15,12 +15,11 @@
    color: white;
   }
 
-
 .btn-flat {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #10b76c;
   transition: background 0.3s ease;
 }
 
@@ -84,4 +83,17 @@ a#link_button_moves:hover {
   80% { background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%) }
   90% { background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%) }
   100% { background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) }
+}
+
+.btn-main-for-form {
+  FONT-VARIANT: JIS04;
+    color: white;
+    border-radius: 35px;
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    font-size: 90%;
+    font-family: 'Work Sans';
+    width: 170px;
+    height: 40px;
+    text-decoration: none;
+    text-align: center;
 }

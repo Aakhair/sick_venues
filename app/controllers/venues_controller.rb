@@ -2,9 +2,19 @@ class VenuesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_venue, only: %i[edit update show]
 
+  def my_venues
+    @venues = current_user.venues
+    authorize @venues
+  end
+
   def index
-    @venues = Venue.all
-    @venues = policy_scope(Venue)
+    # @venues = Venue.all
+    # @venues = policy_scope(Venue)
+    if params[:query].present?
+      @venues = policy_scope(Venue).search_by_title_and_location(params[:query])
+    else
+      @venues = policy_scope(Venue)
+    end
   end
 
   def show
@@ -52,7 +62,7 @@ class VenuesController < ApplicationController
   def update
     respond_to do |format|
       if @venue.update(venue_params)
-        format.html { redirect_to venue_url(@venue), notice: "Restaurant was successfully updated." }
+        format.html { redirect_to venue_url(@venue), notice: "Venue was successfully updated." }
         format.json { render :show, status: :ok, location: @venue }
       else
         format.html { render :edit, status: :unprocessable_entity }

@@ -11,9 +11,13 @@
 @import "components/index";
 @import "pages/index";
 
-// .row {
-//   // padding: 30px;
-// }
+.row {
+  padding: 30px;
+  border: 2px;
+}
+
+// search on the map
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
 .container_banner{
   padding: 130px;
@@ -22,8 +26,13 @@
 
 .container {
   text-align: center;
+  padding-top: 40px;
 }
 
+.container_category {
+  text-align: center;
+  padding-top: 40px;
+}
 p{
   font-family: "Work Sans";
   font-size: 20px;
