@@ -18,6 +18,8 @@ class VenuesController < ApplicationController
   end
 
   def show
+    @venue = Venue.find(params[:id])
+    @reservation = Reservation.new
     @markers = [
       {
         lat: @venue.latitude,
@@ -26,6 +28,10 @@ class VenuesController < ApplicationController
         image_url: @venue.photo.url
       }
     ]
+
+    # if !current_user
+    #   session[:fall_back_url] = request.url
+    # end
   end
 
   def new
