@@ -3,12 +3,16 @@ class VenuesController < ApplicationController
   before_action :set_venue, only: %i[edit update show]
 
   def index
-    @venues = Venue.all
-    @venues = policy_scope(Venue)
+    # @venues = Venue.all
+    # @venues = policy_scope(Venue)
+    if params[:query].present?
+      @venues = policy_scope(Venue).search_by_title_and_location(params[:query])
+    else
+      @venues = policy_scope(Venue)
+    end
   end
 
   def show
-     @venue = Venue.find(params[:id])
     @markers = [
       {
         lat: @venue.latitude,
