@@ -2,18 +2,20 @@
   <div class="row">
     <div class="col-xs-12 col-sm-8">
       <div class="card mb-3">
-        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @venue.photo.key, height: 300, width: 400, crop: :fill %>);background-position: 100%">
 
+        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @venue.photo.key, height: 300, width: 400, crop: :fill %>);background-position: 100%">
           <h3 class ="banner-price"><strong><%= sprintf('%.2f', @venue.price) %> €/ Day</strong></h3>
-           <%= link_to "Request to book now!", "#", class: "btn banner-btn" %>
+           <%# <%= link_to "Request to book now!", "#", class: "btn banner-btn" %>
+          <button type="button" class="btn banner-btn" data-bs-toggle="modal" data-bs-target="#new_booking_modal">
+            Book now!
+          </button>
+
         </div>
 
         <div class="card-body">
           <div class="d-flex justifiy-content-center text-center">
+
             <div class="text-center">
-            <%# <div>
-              <%= link_to "Request to book now!", "#", class: "btn btn-ghost" %>
-            <%# </div> %>
               <h1 class="m-3"><%= @venue.title %></h1>
 
               <div class="d-flex justify-content-center align-items-md-baseline">
@@ -56,3 +58,5 @@
     </div>
   </div>
 </div>
+
+<%= render "reservations/modal" %>
