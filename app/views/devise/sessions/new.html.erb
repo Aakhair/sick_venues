@@ -4,6 +4,7 @@
 
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
+  <h2 class="text-center" style="color: black;">Log In</h2>
   <div class="form-inputs">
     <%= f.input :email,
                 required: false,
