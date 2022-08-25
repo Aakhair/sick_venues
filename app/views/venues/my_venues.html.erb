@@ -1,22 +1,27 @@
-<h1>My Resevations</h1>
-<h2>Lisbon</h2>
-<p>22 Jan 2022</p>
-<p>Card with image and details (including status)</p>
-
-<div class="container">
-  <div class="card mb-3">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.zoeGrTQtDEKTPvI4UmxWEAHaE8%26pid%3DApi&f=1" class="img-fluid rounded-start">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Name of castle</h5>
-          <p class="card-text">22 August 2022</p>
-          <p class="card-text">Germany</p>
-          <p class="card-text"><small class="text-muted">Completed</small></p>
+<div class="my-venues">
+  <div class="container mt-3">
+    <h1 class="text-start mb-3">My Venues</h1>
+    <div class="card-list-horizontal">
+      <% @venues.each do |venue| %>
+        <div class="card justify-content-between rounded-3">
+          <div class="row g-2" >
+            <div class="col-2 d-flex align-items-center">
+              <div class="card-image-container m-auto rounded-4" style="background-image: url('<%= cl_image_path venue.photo.key %>')">
+              </div>
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= venue.title %></h5>
+                <p class="card-text"><%= venue.location %></p>
+                <p class="card-text"><small class="text-muted">Available</small></p>
+              </div>
+            </div>
+            <div class="col-2">
+              <h3 class="card-price"><%= venue.price %> €</h3>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
