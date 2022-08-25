@@ -4,6 +4,7 @@ class VenuesController < ApplicationController
 
   def my_venues
     @venues = current_user.venues
+    authorize @venues
   end
 
   def index
