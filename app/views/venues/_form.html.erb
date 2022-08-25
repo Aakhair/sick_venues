@@ -13,10 +13,16 @@
            wrapper_html: {data: {controller: "locations-autocomplete", locations_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}},
            class: "mapboxgl-ctrl-geocoder"
         %>
-        <div class="d-flex justify-content-between">
-          <%= f.input :capacity, :as => :integer, :hint => 'Type a Number please.' %>
-          <%= f.input :category, collection: Venue::CATEGORIES %>
-          <%= f.input :price, :as => :float, :label => 'Price per night', :placeholder => '129' %>
+        <div class="row">
+          <div class="col-4">
+            <%= f.input :capacity, :as => :integer, :hint => 'Type a Number please.' %>
+          </div>
+          <div class="col-4">
+            <%= f.input :category, collection: Venue::CATEGORIES %>
+          </div>
+          <div class="col-4">
+            <%= f.input :price, :as => :float, :label => 'Price per night', :placeholder => '129' %>
+          </div>
         </div>
         <%= f.input :photo, as: :file %>
       </div>
