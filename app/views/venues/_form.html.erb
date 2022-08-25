@@ -8,7 +8,11 @@
       <div class="form-inputs">
         <%= f.input :title, :label => 'Venue Name' %>
         <%= f.input :description, :as => :text, :label => 'Description'%>
-        <%= f.input :location, :label => 'Location' %>
+        <%= f.input :location, :label => 'Location',
+           input_html: {data: {locations_autocomplete_target: "locations"}, class: 'd-none'},
+           wrapper_html: {data: {controller: "locations-autocomplete", locations_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}},
+           class: "mapboxgl-ctrl-geocoder"
+        %>
         <div class="d-flex justify-content-between">
           <%= f.input :capacity, :as => :integer, :hint => 'Type a Number please.' %>
           <%= f.input :category, collection: Venue::CATEGORIES %>
