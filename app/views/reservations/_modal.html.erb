@@ -30,15 +30,15 @@
           <h5 class="modal-title" id="exampleModalLabel">Not logged in yet!</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body mt-4">
           <%= form_with url: new_user_session_path, method: :get do |f| %>
             <%= f.hidden_field :venue_id, value: @venue.id, class: "d-none" %>
-            <%= submit_tag "Please sign in to proceed booking", class: "btn banner-btn" %>
+            <%= submit_tag "Please sign in to proceed booking", class: "btn banner-btn mt-6" %>
           <% end %>
         </div>
         <div class="modal-footer">
           <input hidden="true" value="<%=params[:id]%>">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-ghost" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
