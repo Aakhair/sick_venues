@@ -1,0 +1,27 @@
+<div class="my-venues">
+  <div class="container mt-3">
+    <h1 class="text-start mb-3">My Reservations</h1>
+    <div class="card-list-horizontal">
+      <% @reservations.each do |reservation| %>
+        <div class="card justify-content-between rounded-3">
+          <div class="row g-2" >
+            <div class="col-2 d-flex align-items-center">
+              <div class="card-image-container m-auto rounded-4" style="background-image: url('<%= cl_image_path reservation.venue.photo.key %>')">
+              </div>
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= reservation.venue.title %></h5>
+                <p class="card-text"><%= reservation.venue.location %></p>
+                <p class="card-text"><small class="text-muted"><%= reservation.date %></small></p>
+              </div>
+            </div>
+            <div class="col-2">
+              <h3 class="card-price"><%= reservation.venue.price %> €</h3>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
