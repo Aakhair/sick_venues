@@ -1,6 +1,11 @@
 class ReservationsController < ApplicationController
   before_action :set_venue, only: %i[create]
 
+  def my_reservations
+    @reservations = Reservation.where(user: current_user).order(date: :desc)
+    authorize @reservations
+  end
+
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
