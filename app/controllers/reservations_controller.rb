@@ -1,6 +1,10 @@
 class ReservationsController < ApplicationController
   before_action :set_venue, only: %i[create]
 
+  def my_reservations
+    @reservations = current_user.reservations
+  end
+
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
