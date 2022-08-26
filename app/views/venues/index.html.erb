@@ -75,8 +75,9 @@
   <% end %>
 </div>
 
-  <div class="cards_list mb-2">
-    <%= link_to venues_path(category: "outdoor concert") do%>
+  <div class="cards_list mb-2" data-controller="scroller">
+    <a id="section_to_scroll" display="d-none" target="_self" href="#Section_further_down"></a>
+    <%= link_to venues_path(category: "outdoor concert"), data: { action: "click->scroller#scrollToCategories" } do %>
       <div class="card_index 1">
         <div class="card_image"> <%= image_tag "outdoor.png" %> </div>
           <h6 class="text-secondary">Concerts</h6>
@@ -84,7 +85,9 @@
         </div>
       </div>
     <% end %>
-    <%= link_to venues_path(category: "badass wedding") do%>
+
+
+    <%= link_to venues_path(category: "badass wedding"), data: { action: "click->scroller#scrollToCategories" } do%>
       <div class="card_index 2">
         <div class="card_image"> <%= image_tag "wedding.png" %>
           <h6 class="text-secondary">Weddings</h6>
@@ -93,7 +96,7 @@
         </div>
       </div>
     <% end %>
-    <%= link_to venues_path(category: "dog lovers") do%>
+    <%= link_to venues_path(category: "dog lovers"), data: { action: "click->scroller#scrollToCategories" } do%>
       <div class="card_index 3">
         <div class="card_image">
           <%= image_tag "dog.png" %>
@@ -103,7 +106,7 @@
         </div>
       </div>
     <% end %>
-    <%= link_to venues_path(category: "epic birthday") do%>
+    <%= link_to venues_path(category: "epic birthday"), data: { action: "click->scroller#scrollToCategories" } do%>
       <div class="card_index 4">
         <div class="card_image">
           <%= image_tag "bday.png" %>
@@ -113,7 +116,7 @@
         </div>
       </div>
     <% end %>
-    <%= link_to venues_path(category: "messy graduation") do%>
+    <%= link_to venues_path(category: "messy graduation"), data: { action: "click->scroller#scrollToCategories" } do%>
     <div class="card_index 4">
       <div class="card_image">
         <%= image_tag "grad.png" %>
