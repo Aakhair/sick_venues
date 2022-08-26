@@ -128,7 +128,7 @@
                     <%=venue.title%>
                     </h5>
                     <h2 class="card-text text-info mt-2 text-nowrap ml-auto text-white">€ <%=venue.price.floor%></h2>
-                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                  <img src=<%= cl_image_path(venue.user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face) %> class="card-trip-user avatar-bordered" />
                 </div>
               </div>
         <% end %>

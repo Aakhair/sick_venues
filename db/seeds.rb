@@ -15,11 +15,13 @@ puts "deleted the previous records"
 
 puts 'Creating 10 fake users...'
 10.times do
+  file = URI.open("https://source.unsplash.com/random/?user")
   user = User.new(
     email: Faker::Internet.email,
     password: 'test12',
     full_name: Faker::Name.name,
   )
+  user.photo.attach(io: file, filename: "user.png", content_type: "image/png")
   user.save!
 end
 puts '10 Users have been created!'
