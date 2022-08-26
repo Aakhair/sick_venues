@@ -12,6 +12,8 @@ class VenuesController < ApplicationController
     # @venues = policy_scope(Venue)
     if params[:query].present?
       @venues = policy_scope(Venue).search_by_title_and_location(params[:query])
+    elsif params[:category].present?
+      @venues= policy_scope(Venue).where(category: params[:category])
     else
       @venues = policy_scope(Venue)
     end
