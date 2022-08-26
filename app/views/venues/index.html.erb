@@ -62,7 +62,7 @@
 </div>
 
 
-<div class ="container_category mb-4">
+<div class ="container_category mb-4 mt-4">
 <h3 class="text-center mt-5 mb-3">Find the perfect castle for you</h3>
 
 <div class="form-container d-flex justify-content-center">
@@ -76,7 +76,7 @@
   <% end %>
 </div>
 
-  <div class="cards_list mb-4">
+  <div class="cards_list mb-2">
     <div class="card_index 1">
       <div class="card_image"> <%= image_tag "outdoor.png" %> </div>
 
@@ -118,23 +118,24 @@
   </div>
 
 
- <div class="row dflex justify-content-center">
+<div class ="container">
+  <div class="row">
     <% @venues.each do |venue| %>
-      <div class="card m-3 rounded-20" style="width: 18rem;">
-        <%= link_to venue_path(venue), class:"text-decoration-none" do %>
-          <div class="card-img-top text-info text-white", style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path venue.photo.key, height: 300, width: 400, crop: :fill %>); background-position: center; background-size:cover">
-                <div class="card-body rounded-20">
-                    <h5 class="card-title text-white">
-                    <%=venue.title%>
-                    </h5>
-                    <h2 class="card-text text-info mt-2 text-nowrap ml-auto text-white">€ <%=venue.price.floor%></h2>
-                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-                </div>
-              </div>
-        <% end %>
+      <div class="col-3">
+        <div class="card-trip mb-4">
+          <%= cl_image_tag venue.photo.key, height: 300, width: 400, crop: :fill %>
+
+          <div class="card-trip-infos text-left">
+            <div>
+              <h5><%=venue.title%></h5>
+              <p><%=venue.category%></p>
+            </div>
+            <h5 class="card-trip-pricing">€<%=venue.price.floor%></h5>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
-</div>
 </div>
 <br>
