@@ -51,8 +51,8 @@ a#link_button_moves {
 
 a#link_button_moves:hover {
   color: #B01EFF;
-}
 
+}
 .button_moves {
   cursor: pointer;
   width: 220px;
@@ -69,6 +69,7 @@ a#link_button_moves:hover {
   color: white;
   font-family: 'Work Sans';
   margin-top: 10px;
+  scroll-behavior: smooth;
 }
 
 @keyframes gradient {

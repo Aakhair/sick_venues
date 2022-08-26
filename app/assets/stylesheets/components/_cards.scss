@@ -12,10 +12,11 @@
   object-fit: cover;
 }
 
-.card-trip h2 {
-  font-size: 22px;
+.card-trip h6 {
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
+  text-align: left;
 }
 
 .card-trip p {
@@ -23,6 +24,7 @@
   opacity: .7;
   margin: 0;
   color: darkcyan;
+  text-align: left;
 }
 
 
