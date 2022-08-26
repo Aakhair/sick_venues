@@ -3,6 +3,7 @@ class ReservationsController < ApplicationController
 
   def my_reservations
     @reservations = current_user.reservations
+    authorize @reservations
   end
 
   def create
