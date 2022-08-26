@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get "/venues", to: "venues#index"
   get "/my_venues", to: "venues#my_venues"
+  get "/my_reservations", to: "reservations#my_reservations"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
