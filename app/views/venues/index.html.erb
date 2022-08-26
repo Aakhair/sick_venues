@@ -5,7 +5,6 @@
       <p class="text-white">For an unforgettable concert to rave parties</p>
 
       <div class="button-moves-container">
-
         <a target=”_self” class="button_moves_link" href="#Section_further_down"><div class="button_moves" id="button">🎉 Book now</div></a>
         <a class="button_moves_text" target=”_self” id="link_button_moves" href="#Section_further_down"></a>
       </div>
@@ -13,8 +12,8 @@
   </div>
 </div>
 
-<div class="slider mb-1 mt-2">
-  <h3 class="text-center text-lightgrey mt-2 align-middle ">Loved by clients</h3>
+<div class="slider mb-1">
+  <h3 class="text-center text-lightgrey mt-4 align-middle ">Loved by clients</h3>
 	<div class="slide-track">
 		<div class="slide">
 			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="80" width="200" alt="" />
@@ -70,48 +69,54 @@
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Find a movie"
+      placeholder: "Find a castle"
     %>
     <%= submit_tag "Search", class: "btn btn-flat" %>
   <% end %>
 </div>
 
-  <div class="cards_list mb-2">
-    <div class="card_index 1">
-      <div class="card_image"> <%= image_tag "outdoor.png" %> </div>
-      <h6 class="text-secondary">Concerts</h6>
-
-      <div class="card_title title_white">
-      </div>
-    </div>
-
-    <div class="card_index 2">
-      <div class="card_image">
-        <%= image_tag "wedding.png" %>
-         <h6 class="text-secondary">Weddings</h6>
+  <div class="cards_list mb-2" data-controller="scroller">
+    <a id="section_to_scroll" display="d-none" target="_self" href="#Section_further_down"></a>
+    <%= link_to venues_path(category: "outdoor concert"), data: { action: "click->scroller#scrollToCategories" } do %>
+      <div class="card_index 1">
+        <div class="card_image"> <%= image_tag "outdoor.png" %> </div>
+          <h6 class="text-secondary">Concerts</h6>
+          <div class="card_title title_white">
         </div>
-      <div class="card_title title_white">
       </div>
-    </div>
+    <% end %>
 
-    <div class="card_index 3">
-      <div class="card_image">
-        <%= image_tag "dog.png" %>
-         <h6 class="text-secondary">Dog events</h6>
-      </div>
-      <div class="card_title">
-      </div>
-    </div>
 
-    <div class="card_index 4">
-      <div class="card_image">
-        <%= image_tag "bday.png" %>
-         <h6 class="text-secondary">Birthdays</h6>
+    <%= link_to venues_path(category: "badass wedding"), data: { action: "click->scroller#scrollToCategories" } do%>
+      <div class="card_index 2">
+        <div class="card_image"> <%= image_tag "wedding.png" %>
+          <h6 class="text-secondary">Weddings</h6>
+          </div>
+        <div class="card_title title_white">
+        </div>
       </div>
-      <div class="card_title title_black">
+    <% end %>
+    <%= link_to venues_path(category: "dog lovers"), data: { action: "click->scroller#scrollToCategories" } do%>
+      <div class="card_index 3">
+        <div class="card_image">
+          <%= image_tag "dog.png" %>
+          <h6 class="text-secondary">Dog events</h6>
+        </div>
+        <div class="card_title">
+        </div>
       </div>
-    </div>
-
+    <% end %>
+    <%= link_to venues_path(category: "epic birthday"), data: { action: "click->scroller#scrollToCategories" } do%>
+      <div class="card_index 4">
+        <div class="card_image">
+          <%= image_tag "bday.png" %>
+          <h6 class="text-secondary">Birthdays</h6>
+        </div>
+        <div class="card_title title_black">
+        </div>
+      </div>
+    <% end %>
+    <%= link_to venues_path(category: "messy graduation"), data: { action: "click->scroller#scrollToCategories" } do%>
     <div class="card_index 4">
       <div class="card_image">
         <%= image_tag "grad.png" %>
@@ -120,6 +125,7 @@
       <div class="card_title title_black">
       </div>
     </div>
+    <% end %>
   </div>
 
 
@@ -132,7 +138,7 @@
         <div class="card-trip mb-4">
           <%= cl_image_tag venue.photo.key, height: 300, width: 400, crop: :fill %>
 
-          <div class="card-trip-infos text-left">
+          <div class="card-trip-infos text-black text-left">
             <div>
               <h5><%=venue.title%></h5>
               <p><%=venue.category%></p>
