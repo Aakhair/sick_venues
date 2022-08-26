@@ -2,6 +2,11 @@ class VenuesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_venue, only: %i[edit update show]
 
+  def my_venues
+    @venues = current_user.venues
+    authorize @venues
+  end
+
   def index
     # @venues = Venue.all
     # @venues = policy_scope(Venue)
@@ -13,6 +18,8 @@ class VenuesController < ApplicationController
   end
 
   def show
+    @venue = Venue.find(params[:id])
+    @reservation = Reservation.new
     @markers = [
       {
         lat: @venue.latitude,
@@ -21,6 +28,10 @@ class VenuesController < ApplicationController
         image_url: @venue.photo.url
       }
     ]
+
+    # if !current_user
+    #   session[:fall_back_url] = request.url
+    # end
   end
 
   def new
@@ -51,7 +62,7 @@ class VenuesController < ApplicationController
   def update
     respond_to do |format|
       if @venue.update(venue_params)
-        format.html { redirect_to venue_url(@venue), notice: "Restaurant was successfully updated." }
+        format.html { redirect_to venue_url(@venue), notice: "Venue was successfully updated." }
         format.json { render :show, status: :ok, location: @venue }
       else
         format.html { render :edit, status: :unprocessable_entity }

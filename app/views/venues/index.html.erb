@@ -126,6 +126,7 @@
 <div class ="container">
   <div class="row">
     <% @venues.each do |venue| %>
+
       <div class="col-3">
       <%= link_to venue_path(venue), class:"text-decoration-none" do %>
         <div class="card-trip mb-4">
@@ -137,9 +138,10 @@
               <p><%=venue.category%></p>
             </div>
             <h5 class="card-trip-pricing">€<%=venue.price.floor%></h5>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            <img src=<%= cl_image_path(venue.user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face) %> class="card-trip-user avatar-bordered" />
           </div>
         </div>
+
     <% end %>
       </div>
     <% end %>

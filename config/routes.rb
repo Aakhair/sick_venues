@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#landing_page"
 
   get "/venues", to: "venues#index"
+  get "/my_venues", to: "venues#my_venues"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
