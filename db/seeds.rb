@@ -125,3 +125,5 @@ file = URI.open("https://sc04.alicdn.com/kf/H480fc534e72940a8806e839ca191a613f.j
   )
   venue.photo.attach(io: file, filename: "castel.png", content_type: "image/png")
   venue.save!
+
+  
