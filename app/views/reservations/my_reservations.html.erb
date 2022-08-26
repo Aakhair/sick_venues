@@ -1,6 +1,8 @@
-<div class="my-venues">
+<div class="my-venues mt-5">
   <div class="container mt-3">
-    <h1 class="text-start mb-3">My Reservations</h1>
+  <div class="d-flex my-5 justify-content-between">
+    <h1 class="text-start mb-3 col">My Reservations</h1>
+  </div>
     <div class="card-list-horizontal">
       <% @reservations.each do |reservation| %>
         <div class="card justify-content-between rounded-3">
@@ -11,9 +13,9 @@
             </div>
             <div class="col-8">
               <div class="card-body">
-                <h5 class="card-title"><%= reservation.venue.title %></h5>
-                <p class="card-text"><%= reservation.venue.location %></p>
-                <p class="card-text"><small class="text-muted"><%= reservation.date %></small></p>
+                <h5 class="card-title"><%= reservation.date %></h5>
+                <p class="card-title"><%= reservation.venue.title %></p>
+                <p class="card-text"><small class="text-muted"><%= reservation.venue.location %></small></p>
               </div>
             </div>
             <div class="col-2">
