@@ -51,8 +51,8 @@ a#link_button_moves {
 
 a#link_button_moves:hover {
   color: #B01EFF;
-}
 
+}
 .button_moves {
   cursor: pointer;
   width: 220px;
@@ -69,6 +69,7 @@ a#link_button_moves:hover {
   color: white;
   font-family: 'Work Sans';
   margin-top: 10px;
+  scroll-behavior: smooth;
 }
 
 @keyframes gradient {
@@ -96,4 +97,19 @@ a#link_button_moves:hover {
     height: 40px;
     text-decoration: none;
     text-align: center;
+}
+
+.btn-main-for-my-venues {
+  color: white;
+  padding: 16px 42px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  // transition: background 0.3s ease;
+  //font-size: 25px;
+  font-family: 'Work Sans';
+  text-decoration: none;
+  position: relative;
+  text-align: center !important;
+  white-space: nowrap;
+  margin-right: 0 !important;
 }

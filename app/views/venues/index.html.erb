@@ -5,10 +5,10 @@
       <p class="text-white">For an unforgettable concert to rave parties</p>
 
       <div class="button-moves-container">
-        <a target=”_blank” class="button_moves_link" href="https://www.producthunt.com/posts/gradient-buttons-for-react-native"><div class="button_moves" id="button">🎉 Book now</div></a>
-        <a class="button_moves_text" target=”_blank” id="link_button_moves" href="https://www.producthunt.com/posts/gradient-buttons-for-react-native"></a>
-      </div>
 
+        <a target=”_self” class="button_moves_link" href="#Section_further_down"><div class="button_moves" id="button">🎉 Book now</div></a>
+        <a class="button_moves_text" target=”_self” id="link_button_moves" href="#Section_further_down"></a>
+      </div>
     </div>
   </div>
 </div>
@@ -62,7 +62,7 @@
 </div>
 
 
-<div class ="container_category mb-4">
+<div class ="container_category mb-4 mt-4" id="Section_further_down">
 <h3 class="text-center mt-5 mb-3">Find the perfect castle for you</h3>
 
 <div class="form-container d-flex justify-content-center">
@@ -76,9 +76,10 @@
   <% end %>
 </div>
 
-  <div class="cards_list mb-4">
+  <div class="cards_list mb-2">
     <div class="card_index 1">
       <div class="card_image"> <%= image_tag "outdoor.png" %> </div>
+      <h6 class="text-secondary">Concerts</h6>
 
       <div class="card_title title_white">
       </div>
@@ -87,6 +88,7 @@
     <div class="card_index 2">
       <div class="card_image">
         <%= image_tag "wedding.png" %>
+         <h6 class="text-secondary">Weddings</h6>
         </div>
       <div class="card_title title_white">
       </div>
@@ -95,6 +97,7 @@
     <div class="card_index 3">
       <div class="card_image">
         <%= image_tag "dog.png" %>
+         <h6 class="text-secondary">Dog events</h6>
       </div>
       <div class="card_title">
       </div>
@@ -103,6 +106,7 @@
     <div class="card_index 4">
       <div class="card_image">
         <%= image_tag "bday.png" %>
+         <h6 class="text-secondary">Birthdays</h6>
       </div>
       <div class="card_title title_black">
       </div>
@@ -111,6 +115,7 @@
     <div class="card_index 4">
       <div class="card_image">
         <%= image_tag "grad.png" %>
+         <h6 class="text-secondary">Graduations</h6>
       </div>
       <div class="card_title title_black">
       </div>
@@ -118,23 +123,30 @@
   </div>
 
 
- <div class="row dflex justify-content-center">
+<div class ="container">
+  <div class="row">
     <% @venues.each do |venue| %>
-      <div class="card m-3 rounded-20" style="width: 18rem;">
-        <%= link_to venue_path(venue), class:"text-decoration-none" do %>
-          <div class="card-img-top text-info text-white", style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path venue.photo.key, height: 300, width: 400, crop: :fill %>); background-position: center; background-size:cover">
-                <div class="card-body rounded-20">
-                    <h5 class="card-title text-white">
-                    <%=venue.title%>
-                    </h5>
-                    <h2 class="card-text text-info mt-2 text-nowrap ml-auto text-white">€ <%=venue.price.floor%></h2>
-                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-                </div>
-              </div>
-        <% end %>
+
+      <div class="col-3">
+      <%= link_to venue_path(venue), class:"text-decoration-none" do %>
+        <div class="card-trip mb-4">
+          <%= cl_image_tag venue.photo.key, height: 300, width: 400, crop: :fill %>
+
+          <div class="card-trip-infos text-left">
+            <div>
+              <h5><%=venue.title%></h5>
+              <p><%=venue.category%></p>
+            </div>
+            <h5 class="card-trip-pricing">€<%=venue.price.floor%></h5>
+            <img src=<%= cl_image_path(venue.user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face) %> class="card-trip-user avatar-bordered" />
+          </div>
+        </div>
+
+    <% end %>
       </div>
     <% end %>
   </div>
 </div>
 </div>
+<br>
 <br>

@@ -1,6 +1,9 @@
-<div class="my-venues">
+<div class="my-venues mt-5">
   <div class="container mt-3">
-    <h1 class="text-start mb-3">My Venues</h1>
+  <div class="d-flex my-5 justify-content-between">
+    <h1 class="text-start mb-3 col">My Venues</h1>
+    <%= link_to "Create Venue", new_venue_path, class: "btn-main-for-my-venues" %>
+  </div>
     <div class="card-list-horizontal">
       <% @venues.each do |venue| %>
         <div class="card justify-content-between rounded-3">
@@ -18,6 +21,7 @@
             </div>
             <div class="col-2">
               <h3 class="card-price"><%= venue.price %> €</h3>
+              <%= link_to "Edit Venue", edit_venue_path(venue.id), class: "btn btn-link card-price d-block"  %>
             </div>
           </div>
         </div>
