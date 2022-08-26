@@ -85,3 +85,16 @@ a#link_button_moves:hover {
   90% { background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%) }
   100% { background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) }
 }
+
+.btn-main-for-form {
+  FONT-VARIANT: JIS04;
+    color: white;
+    border-radius: 35px;
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    font-size: 90%;
+    font-family: 'Work Sans';
+    width: 170px;
+    height: 40px;
+    text-decoration: none;
+    text-align: center;
+}
