@@ -31,16 +31,26 @@ category = ['badass wedding', 'outdoor concert', 'epic birthday', 'messy graduat
 
 all_users = User.all
 
-filepath_descriptions = "db/seed-castle-descriptions.txt"
+filepath_descriptions = "db/description.txt"
 descriptions = File.read(filepath_descriptions).split("\n")
 
-12.times do |index|
-  file = URI.open("https://source.unsplash.com/random/?medieval,castel")
+filepath_title = "db/title.txt"
+title = File.read(filepath_title).split("\n")
+
+filepath_location = "db/location.txt"
+location = File.read(filepath_location).split("\n")
+
+filepath_picture = "db/pictures.txt"
+picture = File.read(filepath_picture).split("\n")
+
+
+10.times do |index|
+  file = URI.open(picture[index])
 
   venue = Venue.new(
-    title: title.sample,
+    title: title[index],
     description: descriptions[index],
-    location: Faker::Address.full_address,
+    location: location[index],
     capacity: rand(140..2400),
     category: category.sample,
     price: rand(800..10000),
@@ -49,13 +59,14 @@ descriptions = File.read(filepath_descriptions).split("\n")
   venue.photo.attach(io: file, filename: "castel.png", content_type: "image/png")
   venue.save!
 end
-puts '12 Venues have been created!'
+
+puts '10 Venues have been created!'
 
 file = URI.open("https://sc04.alicdn.com/kf/H480fc534e72940a8806e839ca191a613f.jpg")
   venue = Venue.new(
     title: "Bouncy Castle Deluxe",
     description: "You want to throw a party that your friends will remember? Go for our Jumping Castle Deluxe! A large inflatable structure, typically in the form of a stylized castle or other building, on which children can jump and play.",
-    location: Faker::Address.full_address,
+    location: "801 Turkey Run Road, McLean, VA",
     capacity: 50,
     category: "epic birthday",
     price: 80,
@@ -67,7 +78,7 @@ file = URI.open("https://sc04.alicdn.com/kf/H480fc534e72940a8806e839ca191a613f.j
   venue = Venue.new(
     title: "Rapunzel's Tower",
     description: "Looking for an secluded tower hidden deep within the woods outside of the kingdom of Corona? We found the perfect hidden treasure for you. The entrance is a little hard to reach but once in, you will stay forever.",
-    location: Faker::Address.full_address,
+    location: "Pikk 62, 10133 Tallinn, Estland",
     capacity: 2,
     category: "dangerous corporate outing",
     price: 500,
@@ -104,7 +115,7 @@ file = URI.open("https://sc04.alicdn.com/kf/H480fc534e72940a8806e839ca191a613f.j
   venue = Venue.new(
     title: "Broken Castle",
     description: "A little broken but with an unique style. Perfect for everyone with their own distinctive lifestyle and a sense of marginality. ",
-    location: Faker::Address.full_address,
+    location: "450 Brickyard RD, Woodstock, CT",
     capacity: 300,
     category: "crazy hippies",
     price: 700,
