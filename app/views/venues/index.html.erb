@@ -13,8 +13,8 @@
   </div>
 </div>
 
-<div class="slider mb-1 mt-2">
-  <h3 class="text-center text-lightgrey mt-2 align-middle ">Loved by clients</h3>
+<div class="slider mb-1">
+  <h3 class="text-center text-lightgrey mt-3 align-middle ">Loved by clients</h3>
 	<div class="slide-track">
 		<div class="slide">
 			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="80" width="200" alt="" />
@@ -63,7 +63,7 @@
 
 
 <div class ="container_category mb-4 mt-4" id="Section_further_down">
-<h3 class="text-center mt-5 mb-3">Find the perfect castle for you</h3>
+<h2 class="text-center mt-5 mb-3">Find the perfect castle for you</h2>
 
 <div class="form-container d-flex justify-content-center">
   <%= form_with url: venues_path, method: :get, class: "search-form d-flex justify-center mb-5" do %>
@@ -138,7 +138,7 @@
               <p><%=venue.category%></p>
             </div>
             <h5 class="card-trip-pricing">€<%=venue.price.floor%></h5>
-            <img src=<%= cl_image_path(venue.user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face) %> class="card-trip-user avatar-bordered" />
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
         </div>
 
