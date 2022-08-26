@@ -11,10 +11,7 @@
     <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :venue_id,
-                input_html: { class: "d-none", value: params[:venue_id] }
-
-    %>
+    <%= f.input :venue_id, as: :hidden, input_html: { value: params[:venue_id] } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
       <div class="form-actions">
