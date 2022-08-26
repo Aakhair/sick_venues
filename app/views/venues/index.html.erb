@@ -127,6 +127,7 @@
   <div class="row">
     <% @venues.each do |venue| %>
       <div class="col-3">
+      <%= link_to venue_path(venue), class:"text-decoration-none" do %>
         <div class="card-trip mb-4">
           <%= cl_image_tag venue.photo.key, height: 300, width: 400, crop: :fill %>
 
@@ -139,9 +140,11 @@
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
         </div>
+    <% end %>
       </div>
     <% end %>
   </div>
+</div>
 </div>
 <br>
 <br>
